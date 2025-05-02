@@ -11,7 +11,7 @@ values = 0.0
 act1="OFF"
 
 def on_publish(client,userdata,result):             #create function for callback
-    print("el dato ha sido publicado \n")
+    print("el dato ha sido divulgado \n")
     pass
 
 def on_message(client, userdata, message):
@@ -58,10 +58,10 @@ if st.button('OFF'):
 else:
     st.write('')
 
-values = st.slider('Selecciona el rango de valores',0.0, 100.0)
+values = st.slider('Elige el rango de valores',0.0, 100.0)
 st.write('Values:', values)
 
-if st.button('Enviar valor analógico'):
+if st.button('Transmitir valor analógico'):
     client1= paho.Client("Hollow")                           
     client1.on_publish = on_publish                          
     client1.connect(broker,port)   
